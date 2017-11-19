@@ -36,12 +36,12 @@
           <div class="well sidebar-nav">
 <ul class="nav nav-list">
           <li class="nav-header">Site content</li>
-    <li class="active"><a href="#"><span class="none"></span>Home page</a>
-  </li>
+    <li><a href="index.html" title="Home page"><span class="none"></span>Home page</a>  </li>
     <li><a href="attributes.html" title="Attributes"><span class="none"></span>Attributes</a>  </li>
     <li><a href="admonitions.html" title="Admonitions"><span class="none"></span>Admonitions</a>  </li>
     <li><a href="source.html" title="Source"><span class="none"></span>Source</a>  </li>
-    <li><a href="diagrams.html" title="Diagrams"><span class="none"></span>Diagrams</a>  </li>
+    <li class="active"><a href="#"><span class="none"></span>Diagrams</a>
+  </li>
     <li><a href="sub-folder/sub.html" title="Sub-document"><span class="none"></span>Sub-document</a>  </li>
           <li class="nav-header">Project Documentation</li>
     <li><a href="project-reports.html" title="Project Reports"><span class="icon-chevron-right"></span>Project Reports</a>  </li>
@@ -57,36 +57,33 @@
           </div>
         </div>
         <div id="bodyColumn"  class="span10" >
-<h1>Maven site</h1>
+<h1>Diagrams</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>This is a nice Maven site, you can navigate the documentation by using the sidebar.</p>
+<p>Demo the inclusion of semantic diagrams.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="./images/icons/note.png" alt="Note"/>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You should also try out:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>the <strong><a href="handbook/handbook.html">HTML handbook</a></strong> version <span class="image"><img src="images/html5.png" alt="HTML5" width="20" height="20"/></span></p>
-</li>
-<li>
-<p>the <strong><a href="handbook/handbook.pdf">PDF handbook</a></strong> version <span class="image"><img src="images/pdf.png" alt="PDF" width="20" height="20"/></span></p>
-</li>
-<li>
-<p>the <strong><a href="slides/slides.html">reveal.js presentation</a></strong> version <span class="image"><img src="images/slides.png" alt="Slides" width="20" height="20"/></span></p>
-</li>
-</ul>
 </div>
-</td>
-</tr>
-</table>
+<div class="sect1">
+<h2 id="graphviz">Graphviz</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="dot-example.svg" alt="dot example" width="118" height="345"/>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plantuml">Plantuml</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="plantuml-example.png" alt="plantuml example" width="274" height="222"/>
+</div>
+</div>
+</div>
 </div>
         </div>
       </div>

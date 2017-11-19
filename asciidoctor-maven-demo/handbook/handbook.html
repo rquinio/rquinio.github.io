@@ -522,23 +522,33 @@ table.CodeRay td.code>pre{padding:0}
 <h1>Handbook</h1>
 <div class="details">
 <span id="revnumber">version 0.1-SNAPSHOT,</span>
-<span id="revdate">18 nov. 2017</span>
+<span id="revdate">19 nov. 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_topic_1">Topic 1</a>
+<li><a href="#_attributes">Attributes</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_details">Details</a></li>
+<li><a href="#_environment_attributes">Environment attributes</a></li>
+<li><a href="#_custom_attributes">Custom attributes</a></li>
+</ul>
+</li>
+<li><a href="#_admonitions">Admonitions</a></li>
+<li><a href="#_source_code">Source code</a>
+<ul class="sectlevel2">
 <li><a href="#_inline_source">Inline source</a></li>
 <li><a href="#_referenced_source">Referenced source</a></li>
 </ul>
 </li>
-<li><a href="#_topic_2">Topic 2</a>
+<li><a href="#_diagrams">Diagrams</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction_2">Introduction</a></li>
-<li><a href="#_details_2">Details</a></li>
+<li><a href="#_graphviz">Graphviz</a></li>
+<li><a href="#_plantuml">Plantuml</a></li>
+</ul>
+</li>
+<li><a href="#_sub_document">Sub-document</a>
+<ul class="sectlevel2">
+<li><a href="#_inclusions">Inclusions</a></li>
 </ul>
 </li>
 </ul>
@@ -559,7 +569,23 @@ table.CodeRay td.code>pre{padding:0}
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This is a nice HTML handbook, but you should also try out the <a href="../index.html">Maven site</a>, <a href="handbook.pdf">PDF handbook</a> or <a href="../slides/slides.html">reveal.js presentation</a> versions.
+<div class="title">More</div>
+<div class="paragraph">
+<p>This is a nice HTML handbook. You should also try out:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <strong><a href="../index.html">Maven site</a></strong> <span class="image"><img src="../images/maven.png" alt="Maven" width="40" height="20"></span></p>
+</li>
+<li>
+<p>the <strong><a href="handbook.pdf">PDF handbook</a></strong> version <span class="image"><img src="../images/pdf.png" alt="PDF" width="20" height="20"></span></p>
+</li>
+<li>
+<p>the <strong><a href="../slides/slides.html">reveal.js presentation</a></strong> version <span class="image"><img src="../images/slides.png" alt="Slides" width="20" height="20"></span></p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -568,26 +594,48 @@ This is a nice HTML handbook, but you should also try out the <a href="../index.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_topic_1">Topic 1</h2>
+<h2 id="_attributes">Attributes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Topic 1 is very important.</p>
+<p>Demo the usage of attributes.</p>
 </div>
-<div class="imageblock">
+<div class="sect2">
+<h3 id="_environment_attributes">Environment attributes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>backend: html5</p>
+</li>
+<li>
+<p>asciidoctor-version: 1.5.6.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_attributes">Custom attributes</h3>
+<div class="paragraph">
+<p>Variables can be passed as custom attributes, initialized from a maven property (no maven filtering of .adoc files needed)</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<img src="../images/asciidoctor.png" alt="asciidoctor">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;attributes&gt;</span>
+  <span class="tag">&lt;awesome-version&gt;</span>${awesome.version}<span class="tag">&lt;/awesome-version&gt;</span>
+<span class="tag">&lt;/attributes&gt;</span></code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_introduction">Introduction</h3>
 <div class="paragraph">
-<p>BlaBla</p>
+<p>Awesome library version: <strong>1.2</strong>.</p>
+</div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_details">Details</h3>
+</div>
+<div class="sect1">
+<h2 id="_admonitions">Admonitions</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>BlaBla</p>
+<p>Demo the display of icons as images or fonts.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -596,11 +644,67 @@ This is a nice HTML handbook, but you should also try out the <a href="../index.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Something to note.
+Note
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Warning
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Tip
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Important
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Caution
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_source_code">Source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo source code inclusion.</p>
 </div>
 <div class="sect2">
 <h3 id="_inline_source">Inline source</h3>
@@ -661,22 +765,38 @@ Also see the <a href="../apidocs/HelloWorld.html">Javadoc</a>.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_topic_2">Topic 2</h2>
+<h2 id="_diagrams">Diagrams</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Topic 2 is not so important.</p>
+<p>Demo the inclusion of semantic diagrams.</p>
 </div>
 <div class="sect2">
-<h3 id="_introduction_2">Introduction</h3>
-<div class="paragraph">
-<p>BlaBla</p>
+<h3 id="_graphviz">Graphviz</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../dot-example.svg" alt="dot example" width="118" height="345">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_details_2">Details</h3>
-<div class="paragraph">
-<p>BlaBla</p>
+<h3 id="_plantuml">Plantuml</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../plantuml-example.png" alt="plantuml example" width="274" height="222">
 </div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sub_document">Sub-document</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Demo the inclusion of sub-documents, with relative paths for images/icons/diagrams.</p>
+</div>
+<div class="sect2">
+<h3 id="_inclusions">Inclusions</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -684,10 +804,20 @@ Also see the <a href="../apidocs/HelloWorld.html">Javadoc</a>.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Something to note.
+Note
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/asciidoctor.png" alt="asciidoctor">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../dot-trivial-example.svg" alt="dot trivial example" width="82" height="154">
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -697,7 +827,7 @@ Something to note.
 <div id="footer">
 <div id="footer-text">
 Version 0.1-SNAPSHOT<br>
-Last updated 2017-11-18 22:42:09 CET
+Last updated 2017-11-19 04:05:55 CET
 </div>
 </div>
 </body>
