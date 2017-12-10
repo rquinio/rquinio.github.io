@@ -1,0 +1,4 @@
+[submodule "asciidoctor-maven-demo"]
+	path = asciidoctor-maven-demo
+	url = https://github.com/rquinio/asciidoctor-maven-demo.git
+	branch = gh-pages
